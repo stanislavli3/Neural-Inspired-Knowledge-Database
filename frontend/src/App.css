@@ -9,7 +9,7 @@
 
 /* Sidebar styles */
 .sidebar {
-  width: 16rem; /* Fixed width for the sidebar */
+  width: 15rem; /* Fixed width for the sidebar */
   background-color: #f9fafb; /* Light gray background */
   border-right: 1px solid #e5e7eb; /* Border on the right */
   display: flex;
@@ -30,7 +30,7 @@
   flex-direction: column;
   padding: 2rem;
   background-color: #ffffff; /* Light background */
-  color: #1f2937; /* Text color */
+  color: #1D2230; /* Text color */
 }
 
 .dark .content {
