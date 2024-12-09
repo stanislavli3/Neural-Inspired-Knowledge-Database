@@ -76,7 +76,7 @@
   flex: 1; /* Take up remaining width */
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 6rem;
   background-color: #ffffff;
   color: #1f2937;
   overflow-y: auto; /* Allow scrolling */
