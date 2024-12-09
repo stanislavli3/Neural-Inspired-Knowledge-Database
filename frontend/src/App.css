@@ -1,10 +1,44 @@
+/* Ensure the root container spans the full width and height of the viewport */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex; /* Enables a sidebar and content layout */
+  height: 100vh; /* Full-height layout */
+  width: 100vw; /* Full-width layout */
+  margin: 0;
+  padding: 0; /* Remove the previous padding for centered layout */
 }
 
+/* Sidebar styles */
+.sidebar {
+  width: 16rem; /* Fixed width for the sidebar */
+  background-color: #f9fafb; /* Light gray background */
+  border-right: 1px solid #e5e7eb; /* Border on the right */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Support for dark mode */
+.dark .sidebar {
+  background-color: #1f2937; /* Dark mode background */
+  border-color: #374151; /* Darker border color */
+}
+
+/* Content container */
+.content {
+  flex: 1; /* Take up the remaining space */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #ffffff; /* Light background */
+  color: #1f2937; /* Text color */
+}
+
+.dark .content {
+  background-color: #111827; /* Dark mode background */
+  color: #f3f4f6; /* Light text in dark mode */
+}
+
+/* Existing styles retained */
 .logo {
   height: 6em;
   padding: 1.5em;

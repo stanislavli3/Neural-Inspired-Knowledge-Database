@@ -3,6 +3,7 @@ import "./App.css";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
 import { Component as Sidebar } from "./components/Sidebar/Sidebar";
+import { Component as TopBar } from './components/TopBar/TopBar'; // Import TopBar
 import "flowbite/dist/flowbite.css";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/style.css";
@@ -10,31 +11,48 @@ function App() {
   const editor = useCreateBlockNote();
 
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <div className="w-64 bg-gray-50 border-r dark:bg-gray-800">
-        <Sidebar />
+    <div className="app-container">
+      {/* Top Bar */}
+      <div className="top-bar">
+        <div className="top-bar-left">
+          <span className="logo">PipeCogs.ai</span>
+        </div>
+        {/*
+        <div className="top-bar-right">
+          <button className="action-button">Upgrade to Pro</button>
+          <img
+            src="https://via.placeholder.com/40"
+            alt="Profile"
+            className="profile-pic"
+          />
+        </div>
+        */}
       </div>
 
-      {/* Editor */}
-      <div className="flex-1 flex flex-col p-6">
-        {/* Page Title */}
-        <div className="mb-6 border-b pb-4">
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-            Hi. Leave your idea here and I will structure it!
-          </h1>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            Type your content below or use the "/" command to add blocks.
-          </p>
+      {/* Main Layout */}
+      <div className="main-layout">
+        {/* Sidebar */}
+        <div className="sidebar">
+          <Sidebar />
         </div>
 
-        {/* Editor Area */}
-        <div className="flex-1 bg-white rounded-lg shadow p-6 dark:bg-gray-900 dark:text-gray-100">
-          <BlockNoteView editor={editor} />
+        {/* Main Content */}
+        <div className="main-content">
+          {/* Page Title */}
+          <div className="page-title">
+            <h1>Hi. Leave your idea here and I will structure it!</h1>
+            <p>Type your content below or use the "/" command to add blocks.</p>
+          </div>
+
+          {/* Editor Area */}
+          <div className="editor-area">
+            <BlockNoteView editor={editor} />
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default App;
