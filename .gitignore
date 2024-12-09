@@ -1,1 +1,15 @@
 .env
+# Ignore node_modules
+node_modules/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore SQLite database
+*.sqlite3
+
+# Ignore logs
+*.log
+
+# Ignore environment files
+.env
