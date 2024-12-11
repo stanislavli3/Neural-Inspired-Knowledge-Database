@@ -156,7 +156,7 @@ function App() {
           <a href="/store" className="hover:underline">
             Store
           </a>
-          <a href="/blog" className="hover:underline">
+          <a href="/blog " className="hover:underline">
             Blog
           </a>
           <a href="/careers" className="hover:underline">
