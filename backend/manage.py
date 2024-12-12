@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
-import os
 import sys
-
+import os
 
 def main():
     """Run administrative tasks."""
+    # Add the backend directory to sys.path
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+    # Set the Django settings module
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "neural_ai.settings")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

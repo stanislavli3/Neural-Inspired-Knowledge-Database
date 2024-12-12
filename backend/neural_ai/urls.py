@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import home, notes_api  # Make sure these views are defined in core/views.py
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('', home, name='home'),        # Serves the React app at the root URL
+    path('api/notes/', notes_api, name='notes_api'),
 ]
