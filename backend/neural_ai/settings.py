@@ -12,18 +12,19 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR is the directory that contains manage.py
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-7odzgqm!-64e*dw3@2677(^oifwrdx_6x@z09qkpo)aw=5cx=("
+# Load environment variables from a .env file
+load_dotenv()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# Security settings
+SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")  # Use a fallback only for development
+DEBUG = os.getenv("DEBUG", "True").lower() == "true"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")  # Add multiple hosts as a comma-separated list
 
 # Application definition
 INSTALLED_APPS = [
