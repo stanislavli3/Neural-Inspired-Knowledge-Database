@@ -1,0 +1,42 @@
+/* src/components/TiptapEditor/TiptapEditor.css */
+
+.tiptap-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+    overflow: auto;
+  }
+  
+  .editor-content {
+    flex: 1;
+    margin: 8px 0;
+  }
+  
+  .bubble-menu {
+    display: flex;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  .bubble-menu .is-active {
+    font-weight: bold;
+  }
+  
+  .floating-menu {
+    display: flex;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+  }
+  

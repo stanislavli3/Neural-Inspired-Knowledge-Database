@@ -1,57 +1,42 @@
-import "./App.css";
-import { BlockNoteView } from "@blocknote/mantine";
-import { useCreateBlockNote } from "@blocknote/react";
-import { Component as Sidebar } from "./components/Sidebar/Sidebar";
-import "flowbite/dist/flowbite.css";
-import "@blocknote/core/fonts/inter.css";
-import "@blocknote/mantine/style.css";
+import React from 'react';
+import './App.css';
+import { Component as Sidebar } from './components/Sidebar/Sidebar';
+import { Component as TopBar } from './components/TopBar/TopBar';
+import TiptapEditor from './components/TiptapEditor/TiptapEditor'; 
 
 function App() {
-  const editor = useCreateBlockNote();
-
   return (
-    <div className="app-container">
+    <div className="app-container flex flex-col h-screen">
       {/* Top Bar */}
-      <div className="top-bar">
-        <div className="top-bar-left">
-          <span className="logo">PipeCogs.ai</span>
-        </div>
-        {/*
-        <div className="top-bar-right">
-          <button className="action-button">Upgrade to Pro</button>
-          <img
-            src="https://via.placeholder.com/40"
-            alt="Profile"
-            className="profile-pic"
-          />
-        </div>
-        */}
-      </div>
+      <TopBar />
 
       {/* Main Layout */}
-      <div className="main-layout">
+      <div className="main-layout flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className="sidebar">
+        <div className="sidebar w-64 bg-gray-50 border-r dark:bg-gray-800">
           <Sidebar />
         </div>
 
         {/* Main Content */}
-        <div className="main-content">
+        <div className="main-content flex-1 flex flex-col p-6 overflow-y-auto">
           {/* Page Title */}
-          <div className="page-title">
-            <h1>Hi. Leave your idea here and I will structure it!</h1>
-            <p>Type your content below or use the "/" command to add blocks.</p>
+          <div className="page-title mb-4">
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+              Welcome to TipTap!
+            </h1>
+            <p className="text-gray-500 dark:text-gray-400">
+              Use the editor below to create and style your content.
+            </p>
           </div>
 
-          {/* Editor Area */}
-          <div className="editor-area">
-            <BlockNoteView editor={editor} />
+          {/* TipTap Editor */}
+          <div className="editor-area flex-1 bg-white rounded-lg shadow p-6 dark:bg-gray-900">
+            <TiptapEditor />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
 
 export default App;
